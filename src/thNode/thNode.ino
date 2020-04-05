@@ -2,6 +2,7 @@
 #include <WiFiManager.h>
 #include <BlynkSimpleEsp8266.h>
 #include <WEMOS_SHT3X.h>
+#include <math.h>
 
 SHT3X sht30(0x45);
 
@@ -15,11 +16,27 @@ void configModeCallback (WiFiManager *myWiFiManager) {
 
 BlynkTimer timer;
 
+WidgetBridge bridgeDisplay(V2);
+WidgetBridge bridgeMist(V3);
+WidgetBridge bridgeFan(V4);
+
+BLYNK_CONNECTED() {
+  bridgeDisplay.setAuthToken("aipPOted72RwORpKRfuy2GUUjVbCEAe8");
+  bridgeMist.setAuthToken("ivoyEBPsTcNU2NuW6rS-yYaAxu9mVaGG");
+  bridgeFan.setAuthToken("TT1J1pUsvIoUKa8rXzGb1pQYlDoRTKdP");
+}
+
 void thUpdate()
 {
   sht30.get();
-  Blynk.virtualWrite(V0, sht30.cTemp);
-  Blynk.virtualWrite(V1, sht30.humidity);
+  float temp = roundf(sht30.cTemp*10)/10;
+  float humi = roundf(sht30.humidity*10)/10;
+  Blynk.virtualWrite(V0, temp);
+  Blynk.virtualWrite(V1, humi);
+  bridgeDisplay.virtualWrite(V1, temp);
+  bridgeDisplay.virtualWrite(V2, humi);
+  bridgeMist.virtualWrite(V1, humi);
+  bridgeFan.virtualWrite(V1, temp);
 }
 
 void checkConnect()

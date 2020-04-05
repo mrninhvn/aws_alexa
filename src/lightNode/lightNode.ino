@@ -1,6 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiManager.h>
 #include <BlynkSimpleEsp8266.h>
+#include <math.h>
 
 char auth[] = "oCqRN25xq72lfrdpdX4K0CNPchm2kEnP";
 
@@ -12,18 +13,22 @@ void configModeCallback (WiFiManager *myWiFiManager) {
 
 BlynkTimer timer;
 
-WidgetBridge bridgeLight(V1);
+WidgetBridge bridgeRGB(V1);
+WidgetBridge bridgeDisplay(V2);
 
 BLYNK_CONNECTED() {
-  bridgeLight.setAuthToken("P5WryBvOBL-OHdSgy7W6aoUyqNvi68yj");
+  bridgeRGB.setAuthToken("P5WryBvOBL-OHdSgy7W6aoUyqNvi68yj");
+  bridgeDisplay.setAuthToken("aipPOted72RwORpKRfuy2GUUjVbCEAe8");
 }
 
 void lightUpdate()
 {
   float Vout = 3.3*analogRead(A0)/1024;
   float lux = 500000/((10000*Vout)/(3.3 - Vout));
+  lux = roundf(lux*10)/10;
   Blynk.virtualWrite(V0, lux);
-  bridgeLight.virtualWrite(V1, lux);
+  bridgeRGB.virtualWrite(V1, lux);
+  bridgeDisplay.virtualWrite(V0, lux);
 }
 
 void checkConnect()
