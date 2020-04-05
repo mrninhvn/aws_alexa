@@ -80,5 +80,13 @@ void setup() {
 void loop(){
   Blynk.run();
   timer.run();
+  if (setHumi > humi)
+  {
+    mistStatus = 1;
+  }
+  else
+  {
+    mistStatus = 0;
+  }
   digitalWrite(D1, mistStatus);
 }

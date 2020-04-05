@@ -84,6 +84,14 @@ void setup() {
 void loop(){
   Blynk.run();
   timer.run();
+  if (setTemp > temp)
+  {
+    fanStatus = 0;
+  }
+  else
+  {
+    fanStatus = 1;
+  }
   if (fanStatus == 1)
   {
     M1.setmotor( _CW, 100);
