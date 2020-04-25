@@ -3,7 +3,7 @@
 #include <BlynkSimpleEsp8266.h>
 #include <math.h>
 
-char auth[] = "oCqRN25xq72lfrdpdX4K0CNPchm2kEnP";
+char auth[] = "EZ-cLj6AOgE6hIwDmCnu-pAthHxCk27N";
 
 void configModeCallback (WiFiManager *myWiFiManager) {
   Serial.println("Entered config mode");
@@ -17,8 +17,8 @@ WidgetBridge bridgeRGB(V1);
 WidgetBridge bridgeDisplay(V2);
 
 BLYNK_CONNECTED() {
-  bridgeRGB.setAuthToken("P5WryBvOBL-OHdSgy7W6aoUyqNvi68yj");
-  bridgeDisplay.setAuthToken("aipPOted72RwORpKRfuy2GUUjVbCEAe8");
+  bridgeRGB.setAuthToken("xLvGYq8nj_ROJdi_FMNjWSTO1ZpKMK_n");
+  bridgeDisplay.setAuthToken("MuDT7u28EtP6-C6cBvobV29faMUGpO_0");
 }
 
 void lightUpdate()

@@ -5,7 +5,7 @@
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, D2, NEO_GRB + NEO_KHZ800);
 
-char auth[] = "P5WryBvOBL-OHdSgy7W6aoUyqNvi68yj";
+char auth[] = "xLvGYq8nj_ROJdi_FMNjWSTO1ZpKMK_n";
 
 int setLight = 50;
 

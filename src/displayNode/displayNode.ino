@@ -7,7 +7,7 @@
 #define OLED_RESET 0  // GPIO0
 Adafruit_SSD1306 display(OLED_RESET);
 
-char auth[] = "aipPOted72RwORpKRfuy2GUUjVbCEAe8";
+char auth[] = "MuDT7u28EtP6-C6cBvobV29faMUGpO_0";
 
 void configModeCallback (WiFiManager *myWiFiManager) {
   Serial.println("Entered config mode");

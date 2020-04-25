@@ -6,7 +6,7 @@
 
 SHT3X sht30(0x45);
 
-char auth[] = "OWXj3FR7I0UBgFU_8zbxnDRidZphbwtb";
+char auth[] = "cDisL7jul9M50iYaozvzcf83Sa4Tb8QQ";
 
 void configModeCallback (WiFiManager *myWiFiManager) {
   Serial.println("Entered config mode");
@@ -21,9 +21,9 @@ WidgetBridge bridgeMist(V3);
 WidgetBridge bridgeFan(V4);
 
 BLYNK_CONNECTED() {
-  bridgeDisplay.setAuthToken("aipPOted72RwORpKRfuy2GUUjVbCEAe8");
-  bridgeMist.setAuthToken("ivoyEBPsTcNU2NuW6rS-yYaAxu9mVaGG");
-  bridgeFan.setAuthToken("TT1J1pUsvIoUKa8rXzGb1pQYlDoRTKdP");
+  bridgeDisplay.setAuthToken("MuDT7u28EtP6-C6cBvobV29faMUGpO_0");
+  bridgeMist.setAuthToken("XDxuyhKerygWslUd7R9h36XGzUbo5gNi");
+  bridgeFan.setAuthToken("a17t7bcSz-220nbpwZR-rIC13AvSJsWL");
 }
 
 void thUpdate()

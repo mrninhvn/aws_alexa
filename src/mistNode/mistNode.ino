@@ -2,7 +2,7 @@
 #include <WiFiManager.h>
 #include <BlynkSimpleEsp8266.h>
 
-char auth[] = "ivoyEBPsTcNU2NuW6rS-yYaAxu9mVaGG";
+char auth[] = "XDxuyhKerygWslUd7R9h36XGzUbo5gNi";
 
 int setHumi = 60;
 int humi = 0;

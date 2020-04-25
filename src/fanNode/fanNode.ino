@@ -6,7 +6,7 @@
 
 Motor M1(0x30, _MOTOR_A, 1000); //Motor A
 
-char auth[] = "TT1J1pUsvIoUKa8rXzGb1pQYlDoRTKdP";
+char auth[] = "a17t7bcSz-220nbpwZR-rIC13AvSJsWL";
 
 int setTemp = 25;
 int temp = 50;

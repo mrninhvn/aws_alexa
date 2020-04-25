@@ -6,7 +6,7 @@
 
 Motor M1(0x30, _MOTOR_A, 1000); //Motor A
 
-char auth[] = "qDD4gZ_T3dFwaGJz3_XI2ZYXHzcNQII0";
+char auth[] = "au-BSHAwXAybrvtVoPLk0B2R0okr5aTK";
 
 int pumpStatus;
 
