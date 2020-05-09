@@ -142,7 +142,7 @@ function controlFanInSession(intent, session, callback) {
     let sessionAttributes = {};
     let speechOutput = '';
 	const shouldEndSession = false;
-	speechOutput = "OK turn on fan when temperature over " + intent.slots.temp.value + "degree Celsius";
+	speechOutput = "OK turn on fan when temperature over " + intent.slots.temp.value + "°C";
     return new Promise((resolve, reject) => {
     const options = {
         host: '188.166.206.43',
@@ -271,8 +271,8 @@ function readTemperatureInSession(intent, session, callback) {
 			var info = JSON.parse(body);
 			console.log('Function called succesfully:', data);
 			sessionAttributes = createTemperatureAttributes(info.temperature);
-			speechOutput = "Temperature is " + parseFloat(body.slice(2, -2)) + "  degree Celsius.";
-// 			repromptText = "Temperature is " + info.temperature + " degree Celsius. Humidity is " + info.humidity + " percent";
+			speechOutput = "Temperature is " + parseFloat(body.slice(2, -2)) + "°C";
+// 			repromptText = "Temperature is " + info.temperature + "°C. Humidity is " + info.humidity + "%";
 			console.log(speechOutput);
 			callback(sessionAttributes,buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 		},
