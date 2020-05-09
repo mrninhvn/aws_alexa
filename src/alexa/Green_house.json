@@ -1,0 +1,129 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "check my greenhouse",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "thank you",
+                        "thanks",
+                        "close my green house"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "temperature",
+                    "slots": [],
+                    "samples": [
+                        "tell me temperature",
+                        "tell me current temperature"
+                    ]
+                },
+                {
+                    "name": "light",
+                    "slots": [],
+                    "samples": [
+                        "tell me current light value",
+                        "tell me light value"
+                    ]
+                },
+                {
+                    "name": "lightControl",
+                    "slots": [
+                        {
+                            "name": "brightness",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "set light brightness to {brightness} lux"
+                    ]
+                },
+                {
+                    "name": "pumpControl",
+                    "slots": [
+                        {
+                            "name": "OnOff",
+                            "type": "OnOffValue"
+                        }
+                    ],
+                    "samples": [
+                        "Pump {OnOff}"
+                    ]
+                },
+                {
+                    "name": "humidity",
+                    "slots": [],
+                    "samples": [
+                        "tell me current humidity",
+                        "tell me humidity"
+                    ]
+                },
+                {
+                    "name": "fanControl",
+                    "slots": [
+                        {
+                            "name": "temp",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "turn off fan when temperature is less than {temp}",
+                        "turn on fan when temperature over {temp}"
+                    ]
+                },
+                {
+                    "name": "mistControl",
+                    "slots": [
+                        {
+                            "name": "humi",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "turn on humidifier when humidity is less than {humi}",
+                        "turn off humidifier when humidity over {humi}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "OnOffValue",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "On"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Off"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
